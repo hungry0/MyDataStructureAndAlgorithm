@@ -37,13 +37,13 @@ public:
 	virtual Tv& vertex(int) = 0;
 	virtual int inDegree(int) = 0;
 	virtual int outDegree(int) = 0;
-	virtual int firstNbr(int) = 0;		//第一个邻节点
-	virtual int nextNbr(int) = 0;		//下一个临接点
+	virtual int firstNbr(int) = 0;			//第一个邻节点
+	virtual int nextNbr(int,int) = 0;		//下一个临接点
 
 	virtual VStatus& status(int) = 0;
-	virtual int& dTime(int) = 0;
-	virtual int& fTime(int) = 0;
-	virtual int& parent(int) = 0;
+	virtual int& dTime(int) = 0;			//第一次访问的时间
+	virtual int& fTime(int) = 0;			//第二次访问的时间
+	virtual int& parent(int) = 0;	
 	virtual int& priority(int) = 0;
 
 	int e;
@@ -58,6 +58,6 @@ public:
 	void bfs(int);
 	void bcc(int);
 
-	void prim(int);	//最小支撑树
-	void dijkstra(int);	//最短路径算法
+	void prim(int);				//最小支撑树
+	void dijkstra(int);			//最短路径算法
 };
