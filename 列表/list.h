@@ -8,7 +8,8 @@ class List
 private:
 	int _size;
 
-	ListNodePosi(T) header, trailer;
+	ListNodePosi(T) header;
+	ListNodePosi(T) trailer;
 
 protected:
 	void init();

@@ -9,6 +9,7 @@ void List<T>::copyNodes(ListNode<T>* p, int n)
 
 	while (n--)
 	{
+		//逐个插入最后边，相当于复制
 		insertAsLast(p->data);
 		p = p->succ;
 	}

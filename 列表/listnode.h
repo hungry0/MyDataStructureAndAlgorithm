@@ -9,7 +9,8 @@ struct ListNode
 {
 	T data;
 
-	ListNodePosi(T) pred, succ;
+	ListNodePosi(T) pred;
+	ListNodePosi(T) succ;
 
 	ListNode(){}
 

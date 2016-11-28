@@ -15,7 +15,7 @@ ListNode<T>* List<T>::insertAsLast(T const& e)
 {
 	_size++;
 
-	return header->insertAsPred(e);
+	return trailer->insertAsPred(e);
 }
 
 template <typename T>

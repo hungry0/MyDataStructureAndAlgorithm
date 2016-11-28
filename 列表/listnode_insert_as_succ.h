@@ -9,5 +9,7 @@ ListNode<T>* ListNode<T>::insertAsSucc(T const& e)
 	succ->pred = x;
 
 	succ = x;
+
+	return x;
 }
 
