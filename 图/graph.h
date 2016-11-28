@@ -32,7 +32,7 @@ private:
 
 public:
 	int n;
-	virtual int insert(Tv const&) = 0;
+	virtual int insert(Tv const&) = 0;	//≤Â»Î∂•µ„
 	virtual Tv remove(int) = 0;
 	virtual Tv& vertex(int) = 0;
 	virtual int inDegree(int) = 0;
