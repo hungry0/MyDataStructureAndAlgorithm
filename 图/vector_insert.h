@@ -1,5 +1,6 @@
 #pragma once
 #include "vector.h"
+#include "vector_expand.h"
 
 template <typename T>
 Rank Vector<T>::insert(Rank r, T const& e)

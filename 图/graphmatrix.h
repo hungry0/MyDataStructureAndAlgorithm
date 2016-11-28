@@ -1,6 +1,11 @@
 #pragma once
 #include "graph.h"
 #include "vector.h"
+#include "vector_bracket.h"
+#include "vector_remove.h"
+#include "vector_insert.h"
+#include "vector_constructor_by_copying.h"
+#include "vector_assignment.h"
 
 template<typename Tv>
 struct Vertex
@@ -77,6 +82,11 @@ public:
 		return j;
 	}
 
+	virtual VStatus& status(int i)
+	{
+		return V[i].status;
+	}
+
 	virtual int& dTime(int i)
 	{
 		return V[i].dTime;
@@ -102,6 +112,7 @@ public:
 	{
 		for (int j = 0; j < n; j++)
 			E[j].insert(NULL);
+
 		n++;
 
 		return V.insert(Vertex<Tv>(vertex));
@@ -174,7 +185,7 @@ public:
 
 	virtual Te remove(int i, int j)
 	{
-		Te eBak = E[i][j];
+		Te eBak = E[i][j]->data;
 
 		delete E[i][j];
 		E[i][j] = NULL;

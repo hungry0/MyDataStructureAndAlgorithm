@@ -2,7 +2,7 @@
 
 typedef int Rank;
 
-#define DEFAULT_CAPACITY  3
+#define DEFAULT_CAPACITY  10
 
 template<typename T>
 class Vector
@@ -81,7 +81,7 @@ public:
 
 	T remove(Rank r);
 
-	T remove(Rank lo, Rank hi);
+	int remove(Rank lo, Rank hi);
 
 	Rank insert(Rank r, T const& e);
 

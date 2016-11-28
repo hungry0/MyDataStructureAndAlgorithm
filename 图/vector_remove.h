@@ -1,8 +1,9 @@
 #pragma once
 #include "vector.h"
+#include "vector_shrink.h"
 
 template <typename T>
-T Vector<T>::remove(Rank lo, Rank hi)
+int Vector<T>::remove(Rank lo, Rank hi)
 {
 	if (lo == hi)	return 0;
 
