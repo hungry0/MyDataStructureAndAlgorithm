@@ -7,6 +7,11 @@ typedef enum {UNDETERMINED,TREE,CROSS,FORWARD,BACKWARD} EType;
 template<typename Tv,typename Te>
 class Graph
 {
+protected:
+	~Graph()
+	{
+	}
+
 private:
 	void reset()
 	{
@@ -56,8 +61,8 @@ public:
 
 	void dfs(int);
 	void bfs(int);
-	void bcc(int);
+//	void bcc(int);
 
-	void prim(int);				//最小支撑树
-	void dijkstra(int);			//最短路径算法
+//	void prim(int);				//最小支撑树
+//	void dijkstra(int);			//最短路径算法
 };

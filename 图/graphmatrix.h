@@ -17,7 +17,7 @@ struct Vertex
 	int parent;
 	int priority;
 
-	Vertex(Tv const& d = (Tv)NULL) : data(d), inDegree(0), outDegree(0), status(UNDISCOVERED), dTime(-1), fTime(-1), parent(-1), priority(INT_MAX)
+	Vertex(Tv const& d = static_cast<Tv>(NULL)) : data(d), inDegree(0), outDegree(0), status(UNDISCOVERED), dTime(-1), fTime(-1), parent(-1), priority(INT_MAX)
 	{
 	}
 };
@@ -36,7 +36,7 @@ class GraphMatrix : public Graph<Tv, Te>
 {
 private:
 	Vector< Vertex<Tv>> V;
-	Vector< Vector< Edge<Te>*>> E;
+	Vector< Vector< Edge<Te>* > > E;
 
 public:
 	GraphMatrix()
@@ -46,132 +46,100 @@ public:
 
 	~GraphMatrix()
 	{
-		for (int j = 0; j < n; j++)
-		{
-			for (int k = 0; k < n; k++)
-			{
-				delete E[j][k];
-			}
-		}
+//		for (int j = 0; j < n; j++)
+//		{
+//			for (int k = 0; k < n; k++)
+//			{
+//				delete E[j][k];
+//			}
+//		}
 	}
 
-	virtual Tv& vertex(int i)
+	Tv& vertex(int i) override
 	{
 		return V[i].data;
 	}
 
-	virtual int inDegree(int i)
+	int inDegree(int i) override
 	{
 		return V[i].inDegree;
 	}
 
-	virtual int outDegree(int i)
+	int outDegree(int i) override
 	{
 		return V[i].outDegree;
 	}
 
-	virtual int firstNbr(int i)
+	int firstNbr(int i) override
 	{
 		return nextNbr(i, n);
 	}
 
-	virtual int nextNbr(int i, int j)
-	{
-		while ((-1 < j) && !exists(i, --j));
-		
-		return j;
-	}
+	int nextNbr(int i, int j) override;
 
-	virtual VStatus& status(int i)
+	VStatus& status(int i) override
 	{
 		return V[i].status;
 	}
 
-	virtual int& dTime(int i)
+	int& dTime(int i) override
 	{
 		return V[i].dTime;
 	}
 
-	virtual int& fTime(int i)
+	int& fTime(int i) override
 	{
 		return V[i].fTime;
 	}
 
-	virtual int& parent(int i)
+	int& parent(int i) override
 	{
 		return V[i].parent;
 	}
 
-	virtual int& priority(int i)
+	int& priority(int i) override
 	{
 		return V[i].priority;
 	}
 
 	//插入顶点
-	virtual int insert(Tv const& vertex)
+	int insert(Tv const& vertex) override
 	{
 		for (int j = 0; j < n; j++)
 			E[j].insert(NULL);
 
 		n++;
 
+		E.insert(Vector<Edge<Te>*>(n, n, static_cast<Edge<Te>*>(nullptr)));
+
 		return V.insert(Vertex<Tv>(vertex));
 	}
 
 	//删除顶点
-	virtual int remove(int i)
-	{
-		//释放内存
-		for (int j = 0; j < n; j++)
-		{
-			if (exists(i, j))
-			{
-				delete E[i][j];
-				V[j].inDegree--;
-			}
-		}
-
-		//删除该节点指向边的集合
-		E.remove(i);
-		n--;
-
-		Tv vBak = vertex(i);
-		V.remove(i);
-
-		for (int j = 0; j < n; j++)
-		{
-			if (Edge<Te> * e = E[j].remove(i))
-			{
-				delete e;
-				V[j].outDegree--;
-			}
-		}
-
-		return vBak;
-	}
+	int remove(int i) override;
 
 	//两点之间是否存在边
-	virtual bool exists(int i, int j)
+	bool exists(int i, int j) override
 	{
 		return (0 <= i) && (i < n) && (0 <= j) && (j < n) && E[i][j] != NULL;
 	}
 
-	virtual EType& type(int i, int j)
+	EType& type(int i, int j) override
 	{
 		return E[i][j]->type;
 	}
 
-	virtual Te& edge(int i, int j)
+	Te& edge(int i, int j) override
 	{
 		return E[i][j]->data;
 	}
 
-	virtual int& weight(int i, int j)
+	int& weight(int i, int j) override
 	{
 		return E[i][j]->weight;
 	}
 
-	virtual void insert(Te const& edge, int w, int i, int j)
+	void insert(Te const& edge, int w, int i, int j) override
 	{
 		if (exists(i, j))
 			return;
@@ -179,11 +147,11 @@ public:
 		E[i][j] = new Edge<Te>(edge, w);
 		e++;
 
-		V[i].outDegree++;
-		V[j].inDegree++;
+		V[i].outDegree += 1;
+		V[j].inDegree += 1;
 	}
 
-	virtual Te remove(int i, int j)
+	Te remove(int i, int j) override
 	{
 		Te eBak = E[i][j]->data;
 
@@ -192,11 +160,49 @@ public:
 
 		e--;
 
-		V[i].outDegree--;
-		V[j].inDegree--;
+		V[i].outDegree -= 1;
+		V[j].inDegree -= 1;
 
 		return eBak;
 	}
-
-
 };
+
+template <typename Tv, typename Te>
+int GraphMatrix<Tv, Te>::nextNbr(int i, int j)
+{
+	while ((-1 < j) && !exists(i, --j));
+
+	return j;
+}
+
+template <typename Tv, typename Te>
+int GraphMatrix<Tv, Te>::remove(int i)
+{
+	//释放内存
+	for (int j = 0; j < n; j++)
+	{
+		if (exists(i, j))
+		{
+			delete E[i][j];
+			V[j].inDegree -= 1;
+		}
+	}
+
+	//删除该节点指向边的集合
+	E.remove(i);
+	n--;
+
+	Tv vBak = vertex(i);
+	V.remove(i);
+
+	for (int j = 0; j < n; j++)
+	{
+		if (Edge<Te>* e = E[j].remove(i))
+		{
+			delete e;
+			V[j].outDegree -= 1;
+		}
+	}
+
+	return vBak;
+}
