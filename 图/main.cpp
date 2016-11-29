@@ -10,12 +10,10 @@ using namespace std;
 void main()
 {
 	GraphMatrix<int, int> G;
-
+//
 	G.insert(0);
 
-	G.insert(1);
-
-	cout << G.exists(0, 1) << endl;
+//	G.reset();
 
 //	for (auto i = 0; i < 10; i++)
 //	{

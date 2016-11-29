@@ -115,7 +115,7 @@ public:
 
 		n++;
 
-		E.insert(Vector< Edge< Te>*>(n, n,  (Edge<Te>*)NULL));
+		E.insert(Vector< Edge<Te>*>(n, n,(Edge<Te>*)NULL));
 
 		return V.insert(Vertex<Tv>(vertex));
 	}

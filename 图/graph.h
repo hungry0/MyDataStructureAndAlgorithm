@@ -7,7 +7,7 @@ typedef enum {UNDETERMINED,TREE,CROSS,FORWARD,BACKWARD} EType;
 template<typename Tv,typename Te>
 class Graph
 {
-private:
+public:
 	void reset()
 	{
 		for (int i = 0; i < n; i++)
@@ -21,7 +21,7 @@ private:
 			for (int j = 0; j < n; j++)
 			{
 				if (exists(i, j))
-					type(i, j) = EType::UNDETERMINED;
+					type(i,j) = EType::UNDETERMINED;
 			}
 		}
 	}

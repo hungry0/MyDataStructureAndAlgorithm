@@ -15,15 +15,15 @@ protected:
 	void copyFrom(T const* A, Rank io, Rank hi);
 	void expand();
 	void shrink();
-	bool bubble(Rank io, Rank hi);
-	void bubbleSort(Rank io,Rank hi);
-	Rank max(Rank io, Rank hi);
-	void selectionSort(Rank io, Rank hi);
-	void merge(Rank io, Rank mi, Rank hi);
-	void mergeSort(Rank io, Rank hi);
-	Rank partition(Rank io,Rank hi);
-	void quickSort(Rank io, Rank hi);
-	void heapSort(Rank io, Rank hi);
+//	bool bubble(Rank io, Rank hi);
+//	void bubbleSort(Rank io,Rank hi);
+//	Rank max(Rank io, Rank hi);
+//	void selectionSort(Rank io, Rank hi);
+//	void merge(Rank io, Rank mi, Rank hi);
+//	void mergeSort(Rank io, Rank hi);
+//	Rank partition(Rank io,Rank hi);
+//	void quickSort(Rank io, Rank hi);
+//	void heapSort(Rank io, Rank hi);
 
 public:
 	Vector(int c = DEFAULT_CAPACITY,int s = 0,T v = 0)
