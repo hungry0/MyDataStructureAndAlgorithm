@@ -1,6 +1,8 @@
 #pragma once
 #include "listnode.h"
 #include "list.h"
+#include "listnode_insert_as_pred.h"
+#include "listnode_insert_as_succ.h"
 
 template <typename T>
 ListNode<T>* List<T>::insertAsFirst(T const& e)

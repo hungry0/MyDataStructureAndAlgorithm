@@ -2,6 +2,7 @@
 #include "graph.h"
 #include "Graphmatrix.h"
 #include "graph_dfs.h"
+#include "graph_bfs.h"
 #include "vector.h"
 
 using namespace std;
@@ -10,22 +11,28 @@ void main()
 {
 	GraphMatrix<int, int> G;
 
-	G.insert(10);
+	G.insert(0);
+
+	G.insert(1);
+
+	cout << G.exists(0, 1) << endl;
 
 //	for (auto i = 0; i < 10; i++)
 //	{
 //		G.insert(i);
 //	}
-//
-//	for(int i = 0; i < 10; i++)
+
+//	for(int i = 0; i < 5; i++)
 //	{
-//		for(int j = 0; j < 10; j++)
+//		for(int j = 0; j < 5; j++)
 //		{
 //			G.insert(1,1,i,j);
 //		}
 //	}
 
-//	G.dfs(0);
+//	G.dfs(1);
+
+//	G.bfs(0);
 		
 	system("pause");
 }

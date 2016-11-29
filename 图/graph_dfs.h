@@ -1,5 +1,6 @@
 #pragma once
 #include "Graphmatrix.h"
+#include "graph.h"
 
 /*
  * 深度优先搜索

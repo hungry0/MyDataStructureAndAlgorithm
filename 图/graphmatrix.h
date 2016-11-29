@@ -75,7 +75,12 @@ public:
 		return nextNbr(i, n);
 	}
 
-	int nextNbr(int i, int j) override;
+	int nextNbr(int i, int j) override
+	{
+		while ((-1 < j) && !exists(i, --j));
+
+		return j;
+	}
 
 	VStatus& status(int i) override
 	{
@@ -110,13 +115,42 @@ public:
 
 		n++;
 
-		E.insert(Vector<Edge<Te>*>(n, n, static_cast<Edge<Te>*>(nullptr)));
+		E.insert(Vector< Edge< Te>*>(n, n,  (Edge<Te>*)NULL));
 
 		return V.insert(Vertex<Tv>(vertex));
 	}
 
 	//删除顶点
-	int remove(int i) override;
+	int remove(int i) override
+	{
+		//释放内存
+		for (int j = 0; j < n; j++)
+		{
+			if (exists(i, j))
+			{
+				delete E[i][j];
+				V[j].inDegree -= 1;
+			}
+		}
+
+		//删除该节点指向边的集合
+		E.remove(i);
+		n--;
+
+		Tv vBak = vertex(i);
+		V.remove(i);
+
+		for (int j = 0; j < n; j++)
+		{
+			if (Edge<Te>* e = E[j].remove(i))
+			{
+				delete e;
+				V[j].outDegree -= 1;
+			}
+		}
+
+		return vBak;
+	}
 
 	//两点之间是否存在边
 	bool exists(int i, int j) override
@@ -166,43 +200,3 @@ public:
 		return eBak;
 	}
 };
-
-template <typename Tv, typename Te>
-int GraphMatrix<Tv, Te>::nextNbr(int i, int j)
-{
-	while ((-1 < j) && !exists(i, --j));
-
-	return j;
-}
-
-template <typename Tv, typename Te>
-int GraphMatrix<Tv, Te>::remove(int i)
-{
-	//释放内存
-	for (int j = 0; j < n; j++)
-	{
-		if (exists(i, j))
-		{
-			delete E[i][j];
-			V[j].inDegree -= 1;
-		}
-	}
-
-	//删除该节点指向边的集合
-	E.remove(i);
-	n--;
-
-	Tv vBak = vertex(i);
-	V.remove(i);
-
-	for (int j = 0; j < n; j++)
-	{
-		if (Edge<Te>* e = E[j].remove(i))
-		{
-			delete e;
-			V[j].outDegree -= 1;
-		}
-	}
-
-	return vBak;
-}

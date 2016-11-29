@@ -28,6 +28,13 @@ public:
 
 	~List();
 
+//	{
+//		clear();
+//
+//		delete trailer;
+//		delete header;
+//	};
+
 	Rank size() { return _size; }
 
 	bool isEmpty() { return _size <= 0; }
@@ -59,3 +66,5 @@ public:
 
 	T remove(ListNodePosi(T) p);
 };
+
+#include "list_initialize.h"

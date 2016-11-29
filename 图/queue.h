@@ -3,6 +3,7 @@
 #include "list_insert.h"
 #include "list_remove.h"
 #include "listnode.h"
+#include "list_destructor.h"
 
 template<typename T>
 class Queue : public List<T>

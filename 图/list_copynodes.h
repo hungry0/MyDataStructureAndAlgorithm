@@ -1,6 +1,7 @@
 #pragma once
 #include "list.h"
 #include "list_insert.h"
+#include "list_initialize.h"
 
 template <typename T>
 void List<T>::copyNodes(ListNode<T>* p, int n) 
