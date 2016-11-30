@@ -1,5 +1,4 @@
 #pragma once
-#include <stack>
 
 typedef enum {UNDISCOVERED,DISCOVERED,VISITED} VStatus;
 typedef enum {UNDETERMINED,TREE,CROSS,FORWARD,BACKWARD} EType;
@@ -28,7 +27,7 @@ public:
 
 	void BFS(int,int&);
 	void DFS(int, int&);
-	void BCC(int, int&, std::stack<int>&);
+//	void BCC(int, int&, std::stack<int>&);
 
 public:
 	int n;

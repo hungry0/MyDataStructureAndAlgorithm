@@ -36,7 +36,7 @@ class GraphMatrix : public Graph<Tv, Te>
 {
 private:
 	Vector< Vertex<Tv>> V;
-	Vector< Vector< Edge<Te>* > > E;
+	Vector< Vector< Edge< Te >* > > E;
 
 public:
 	GraphMatrix()
@@ -46,13 +46,13 @@ public:
 
 	~GraphMatrix()
 	{
-//		for (int j = 0; j < n; j++)
-//		{
-//			for (int k = 0; k < n; k++)
-//			{
-//				delete E[j][k];
-//			}
-//		}
+		for (int j = 0; j < n; j++)
+		{
+			for (int k = 0; k < n; k++)
+			{
+				delete E[j][k];
+			}
+		}
 	}
 
 	Tv& vertex(int i) override
@@ -113,9 +113,9 @@ public:
 		for (int j = 0; j < n; j++)
 			E[j].insert(NULL);
 
-		n++;
+		n += 1;
 
-		E.insert(Vector< Edge<Te>*>(n, n,(Edge<Te>*)NULL));
+		E.insert(Vector< Edge<Te>*> (n, n, static_cast<Edge<Te>*>(NULL)));
 
 		return V.insert(Vertex<Tv>(vertex));
 	}

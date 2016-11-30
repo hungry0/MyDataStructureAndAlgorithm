@@ -10,27 +10,25 @@ using namespace std;
 void main()
 {
 	GraphMatrix<int, int> G;
-//
-	G.insert(0);
 
-//	G.reset();
+	for (auto i = 0; i < 6; i++)
+	{
+		G.insert(i);
+	}
 
-//	for (auto i = 0; i < 10; i++)
-//	{
-//		G.insert(i);
-//	}
+	G.insert(1, 1, 0, 2);
+	G.insert(1, 1, 1, 2);
 
-//	for(int i = 0; i < 5; i++)
-//	{
-//		for(int j = 0; j < 5; j++)
-//		{
-//			G.insert(1,1,i,j);
-//		}
-//	}
+	G.insert(1, 1, 2, 3);
+	G.insert(1, 1, 2, 4);
 
-//	G.dfs(1);
+	G.insert(1, 1, 3, 5);
+	G.insert(1, 1, 4, 5);
+
+
+	G.dfs(1);
 
 //	G.bfs(0);
-		
+
 	system("pause");
 }

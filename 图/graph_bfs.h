@@ -21,6 +21,14 @@ void Graph<Tv, Te>::bfs(int s)
 			BFS(v, clock);
 	}
 	while (s != (v = (++v % n)));
+
+	v = n - 1;
+
+	while (parent(v) != -1)
+	{
+		std::cout << v << " ";
+		v = parent(v);
+	}
 }
 
 template <typename Tv, typename Te>

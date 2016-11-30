@@ -37,14 +37,14 @@ public:
 		copyFrom(A, 0, n);
 	}
 
-	Vector(T const* A,Rank io,Rank hi)
-	{
-		copyFrom(A, io, hi);
-	}
+//	Vector(T const* A,Rank io,Rank hi)
+//	{
+//		copyFrom(A, io, hi);
+//	}
 
 	Vector(Vector<T> const& V)
 	{
-		copyFrom(V._elem,0, V._size);
+		copyFrom(V._elem, 0, V._size);
 	}
 
 	~Vector()
@@ -52,17 +52,18 @@ public:
 		delete []_elem;
 	}
 
-	Rank size()
+	Rank size() const
 	{
 		return _size;
 	}
 
-	bool isEmpty()
+	bool isEmpty() const
 	{
 		return !_size;
 	}
 
-	int disordered() const;
+//	int disordered() const;
+
 	Rank find(T const& e) const
 	{
 		return find(e, 0, _size);
@@ -90,22 +91,24 @@ public:
 		return insert(_size, e);
 	}
 
-	void sort(Rank lo, Rank hi);
+//	void sort(Rank lo, Rank hi);
 
 	void sort()
 	{
-		sort(0, _size);
+//		sort(0, _size);
 	}
 
-	void unsort(Rank lo, Rank hi);
+//	void unsort(Rank lo, Rank hi);
 
 	void unsort()
 	{
 		unsort(0, _size);
 	}
-
-	int deduplicate();	//无序去重
-	int uniquify();		//有序去重
+//
+//	int deduplicate();	//无序去重
+//	int uniquify();		//有序去重
 
 	void printAll();
 };
+
+#include "vector_constructor_by_copying.h"
