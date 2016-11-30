@@ -2,11 +2,23 @@
 
 using namespace std;
 
+/**************************************************************
+
+Author：hungry
+Date:2016.11.30
+Description:快速排序
+
+Analysis:
+① 
+
+**************************************************************/
+
+
 static int partition(int* lists, int lo, int hi)
 {
-	swap(lists[lo],lists[lo + rand() % (hi - lo +1)]);
+	swap(lists[lo],lists[lo + rand() % (hi - lo + 1)]);
 
-	int pivot = lists[lo];
+	auto pivot = lists[lo];
 
 	while (lo < hi)
 	{
@@ -40,15 +52,15 @@ static void quickSort(int* lists, int length)
 	_quickSort(lists,0,length);
 }
 
-void main()
-{
-	int lists[] = {4,345,35,232,53,1,20,33,18,90};
-	
-	quickSort(lists, sizeof(lists) / sizeof(lists[0]));
-	
-	for (size_t i = 0; i < sizeof(lists) / sizeof(lists[0]); i++)
-		cout << lists[i] << " ";
-	
-	system("pause");
-	
-}
+//void main()
+//{
+//	int lists[] = {4,345,35,232,53,1,20,33,18,90};
+//	
+//	quickSort(lists, sizeof(lists) / sizeof(lists[0]));
+//	
+//	for (size_t i = 0; i < sizeof(lists) / sizeof(lists[0]); i++)
+//		cout << lists[i] << " ";
+//	
+//	system("pause");
+//	
+//}
