@@ -2,14 +2,27 @@
 
 using namespace std;
 
-//冒泡排序
+/**************************************************************
+
+Author：hungry
+Date:2016.11.30
+Description:冒泡排序
+
+Analysis:
+	① 从前往后依次遍历，经过一次交换，最大的在后一位
+	② 第二轮交换的时候，不用考虑最后一位
+	③ 设置临时变量isSorted，如果一轮没有一次交换，则已排好序
+
+**************************************************************/
+
+
 static void bubbleSort(int* lists, int length)
 {
-	bool isSorted = true;
+	auto isSorted = true;
 
 	for (size_t i = length; i > 0; i--)
 	{
-		for (int j = 0; j < i-1; j++)
+		for (size_t j = 0; j < i - 1; j++)
 		{
 			if (lists[j] > lists[j + 1])
 			{
