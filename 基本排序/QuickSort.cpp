@@ -46,21 +46,20 @@ static void _quickSort(int* lists, int lo, int hi)
 	_quickSort(lists, mi + 1, hi);	// (mi,hi)
 }
 
-//快速排序
 static void quickSort(int* lists, int length)
 {
 	_quickSort(lists,0,length);
 }
 
-//void main()
-//{
-//	int lists[] = {4,345,35,232,53,1,20,33,18,90};
-//	
-//	quickSort(lists, sizeof(lists) / sizeof(lists[0]));
-//	
-//	for (size_t i = 0; i < sizeof(lists) / sizeof(lists[0]); i++)
-//		cout << lists[i] << " ";
-//	
-//	system("pause");
-//	
-//}
+void main()
+{
+	int lists[] = {4,345,35,232,53,1,20,33,18,90};
+	
+	quickSort(lists, sizeof(lists) / sizeof(lists[0]));
+	
+	for (size_t i = 0; i < sizeof(lists) / sizeof(lists[0]); i++)
+		cout << lists[i] << " ";
+	
+	system("pause");
+	
+}
