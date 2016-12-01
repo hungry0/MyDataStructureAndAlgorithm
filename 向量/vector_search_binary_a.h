@@ -10,7 +10,7 @@ static Rank Bin_Search(T* A, T const& e, Rank lo, Rank hi)
 {
 	while (lo < hi)
 	{
-		Rank mi = (lo + hi) >> 1;
+		Rank mi = (lo + hi) >> 1;		//取中
 
 		if (e < A[mi])					//[lo,mi)
 			hi = mi;
@@ -19,4 +19,6 @@ static Rank Bin_Search(T* A, T const& e, Rank lo, Rank hi)
 		else
 			return mi;
 	}
+
+	return -1;							//找不到则返回-1
 }

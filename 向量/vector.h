@@ -4,6 +4,8 @@ typedef int Rank;
 
 #define DEFAULT_CAPACITY  3
 
+
+
 template<typename T>
 class Vector
 {
@@ -63,17 +65,22 @@ public:
 	}
 
 	int disordered() const;
+
 	Rank find(T const& e) const
 	{
 		return find(e, 0, _size);
 	}
+
 	Rank find(T const& e, Rank io, Rank hi) const;
 
-	Rank search(T const& e) const				//有序向量整体查找
-	{
-		return (_size <= 0) ? -1 : search(e, 0, _size);
-	}
 	Rank search(T const& e, Rank io, Rank hi);
+
+	Rank search(T const& e) 						//有序向量整体查找
+	{
+		return _size <= 0 ? -1 : search(e, 0, _size);
+	}
+
+	
 
 	T& operator[](Rank i) const;
 
@@ -109,3 +116,7 @@ public:
 
 	void printAll();
 };
+
+#include "vector_search.h"
+
+

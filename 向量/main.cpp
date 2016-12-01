@@ -12,9 +12,14 @@ void main()
 {
 	Vector<int> v;
 
-	v.find(20);
+	for (int i = 0; i < 10; i++)
+	{
+		v.insert(i);
+	}
 
-	v.printAll();
+	int i = v.search(20);
+
+	cout << i << endl;
 
 	system("pause");
 }

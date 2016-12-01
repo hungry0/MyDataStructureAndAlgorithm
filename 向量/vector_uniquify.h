@@ -1,9 +1,13 @@
 #pragma once
 #include "vector.h"
 
+/*
+ *	有序向量重复元素剔除
+ */
+
 template <typename T>
-T& Vector<T>::operator[](Rank i) const
+int Vector<T>::uniquify()
 {
-	return _elem[i];
+	
 }
 

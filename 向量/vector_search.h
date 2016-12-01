@@ -5,6 +5,6 @@
 template <typename T>
 Rank Vector<T>::search(T const& e, Rank io, Rank hi)
 {
-	return Bin_Search(_elem, e, lo, hi);
+	return Bin_Search(_elem, e, io, hi);
 }
 
