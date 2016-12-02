@@ -15,7 +15,7 @@ struct ListNode
 
 	ListNode(){}
 
-	ListNode(T e,ListNodePosi(T) p = NULL,ListNodePosi(T) s = NULL) : data(e),pred(p),succ(s)
+	ListNode(T e,ListNodePosi(T) p = nullptr,ListNodePosi(T) s = nullptr) : data(e),pred(p),succ(s)
 	{}
 
 	ListNodePosi(T) insertAsPred(T const& e);	//插入当前节点的前面

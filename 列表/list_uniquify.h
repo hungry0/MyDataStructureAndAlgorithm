@@ -10,7 +10,7 @@ template <typename T>
 int List<T>::uniquify()
 {
 	if (_size < 2)
-		return;
+		return 0;
 
 	int oldSize = _size;
 
