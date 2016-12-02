@@ -5,6 +5,7 @@
 #include "bintree_remove.h"
 #include "binnode_insert.h"
 #include "binnode_succ.h"
+#include "binnode_travlevel.h"
 
 using namespace std;
 
@@ -18,7 +19,9 @@ int main(int argc,char* argv[])
 
 	bin_tree->insertAsRC(bin_tree->root(), 30);
 
-	bin_tree->travIn();
+//	bin_tree->travIn();
+
+	bin_tree->travLevel();
 
 	system("pause");
 

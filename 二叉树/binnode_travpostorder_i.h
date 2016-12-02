@@ -29,10 +29,14 @@ void travPost_I(BinNodePosi(T) x)
 
 	while (!S.empty())
 	{
-		if(S.pop() != x->parent)	//’ª∂•∑«∏∏º¥”“–÷
+		if(S.top() != x->parent)	//’ª∂•∑«∏∏º¥”“–÷
+		{
 			gotoHLVFL(S);
-
-		x = S.pop();
+			S.pop();
+		}
+			
+		x = S.top();
+		S.pop();
 
 		cout << x->data << " ";
 	

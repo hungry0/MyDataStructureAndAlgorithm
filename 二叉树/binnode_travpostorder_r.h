@@ -1,5 +1,6 @@
 #pragma once
 #include "binnode.h"
+#include <iostream>
 
 template<typename T>
 void travPost_R(BinNodePosi(T) x)
@@ -9,5 +10,5 @@ void travPost_R(BinNodePosi(T) x)
 	travPost_R(x->lc);
 	travPost_R(x->rc);
 
-	cout << x->data << " ";
+	std::cout << x->data << " ";
 }
