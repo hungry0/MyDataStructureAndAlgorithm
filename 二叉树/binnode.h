@@ -2,14 +2,13 @@
 
 #define BinNodePosi(T) BinNode<T>*
 
-#define stature(p) ((p) ? (p)->height : -1)
+#define stature(p) ((p) ? (p)->height : -1)	//¸ß¶È
 
 typedef enum
 {
 	RB_RED,
 	RB_BLACK
 } RBColor;
-
 
 template <typename T>
 struct BinNode
@@ -23,7 +22,7 @@ public:
 
 	int height;
 
-	int npl;
+	int npl;		//null path length£¬×óÊ½¶Ñ
 
 	RBColor color;
 
@@ -37,7 +36,7 @@ public:
 	{
 	}
 
-//	int size();
+	int size();
 
 	BinNodePosi(T) insertAsLC(T const&);
 	BinNodePosi(T) insertAsRC(T const&);

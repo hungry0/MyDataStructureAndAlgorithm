@@ -2,6 +2,10 @@
 #include "binnode.h"
 #include "binnode_macro_basic.h"
 
+/*
+ *后继节点，即中序遍历中后边的节点
+ */
+
 template <typename T>
 BinNode<T>* BinNode<T>::succ()
 {

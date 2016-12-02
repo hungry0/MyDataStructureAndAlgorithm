@@ -2,13 +2,23 @@
 #include "binnode.h"
 #include <ostream>
 
-/*
-递归版中序遍历
-*/
+/**************************************************************
 
-template <typename T> //元素类型、操作器
+Author：hungry
+Date:2016.11.30
+Description:递归中序遍历
+
+Analysis:
+① 递归左子树
+② 打印当前节点
+③ 递归右子树
+④ 当前节点为空，则return
+
+**************************************************************/
+
+template <typename T>
 void travIn_R(BinNodePosi(T) x)
-{ //二叉树中序遍历算法（递归版）
+{ 
 	if (!x) return;
 
 	travIn_R(x->lc);

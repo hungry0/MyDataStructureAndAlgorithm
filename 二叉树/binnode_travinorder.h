@@ -14,20 +14,14 @@ void BinNode<T>::travIn()
 	switch (3)
 	{
 	case 1:
-		travIn_I1(this);
-		break;
+		travIn_I1(this); break;
 	case 2:
-		travIn_I2(this);
-		break;
+		travIn_I2(this); break;
 	case 3:
-		travIn_I3(this);
-		break;
+		travIn_I3(this); break;
 	case 4:
-		travIn_I4(this);
-		break;
+		travIn_I4(this); break;
 	default:
-		//µ›πÈ∞Ê÷––Ú±È¿˙
-		travIn_R(this);
-		break;
+		travIn_R(this);	 break;	//µ›πÈ∞Ê÷––Ú±È¿˙
 	}
 }

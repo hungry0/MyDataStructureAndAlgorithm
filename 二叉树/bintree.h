@@ -22,8 +22,8 @@ public:
 
 	~BinTree()
 	{
-		//		if (_size > 0)
-		//			remove(_root);
+		if (_size > 0)
+			remove(_root);
 	}
 
 	int size() const { return _size; }
