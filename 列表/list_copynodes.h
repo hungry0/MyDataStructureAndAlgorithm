@@ -3,7 +3,7 @@
 #include "list_insert.h"
 
 template <typename T>
-void List<T>::copyNodes(ListNode<T>* p, int n) 
+void List<T>::copyNodes(ListNodePosi(T) p, int n) 
 {
 	init();
 

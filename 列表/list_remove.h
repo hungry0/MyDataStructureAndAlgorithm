@@ -2,7 +2,7 @@
 #include "list.h"
 
 template <typename T>
-T List<T>::remove(ListNode<T>* p)
+T List<T>::remove(ListNodePosi(T) p)
 {
 	T e = p->data;
 

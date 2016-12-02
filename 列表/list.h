@@ -28,9 +28,9 @@ public:
 
 	~List();
 
-	Rank size() { return _size; }
+	Rank size() const { return _size; }
 
-	bool isEmpty() { return _size <= 0; }
+	bool isEmpty() const { return _size <= 0; }
 
 	T& operator[](Rank r) const;
 
@@ -42,14 +42,14 @@ public:
 		return p && p != trailer && p != header;
 	}
 
-	int disordered() const;  //判断是否有序
-
 	ListNodePosi(T) find(T const& e) const //列表无序查找
 	{
-		return find(e, _size, trailer);			//?
+		return find(e, _size, trailer);
 	}
 
-	ListNodePosi(T) find(T const& e, int n, ListNodePosi(T) p) const;	//	区间查找
+	ListNodePosi(T) find(T const& e, int n, ListNodePosi(T) p) const;	//无序区间查找
+
+	ListNodePosi(T) search(T const& e, int n, ListNodePosi(T) p) const;	//有序区间查找
 
 	ListNodePosi(T) insertAsFirst(T const& e);
 	ListNodePosi(T) insertAsLast(T const& e);
@@ -58,4 +58,13 @@ public:
 	ListNodePosi(T) insertB(ListNodePosi(T) p, T const& e);	//	p->pred = e
 
 	T remove(ListNodePosi(T) p);
+
+	void reverse() const;
+
+	int deduplicate();	//无序去重
+	int uniquify();		//有序去重
+
+	void printAll() const;
 };
+
+#include "list_initialize.h"

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "list.h"
-#include <locale.h>
+#include <cstddef>
 
 template <typename T>
 void List<T>::init()
