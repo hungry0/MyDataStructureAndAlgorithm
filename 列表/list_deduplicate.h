@@ -2,7 +2,7 @@
 #include "list.h"
 
 /*
- *
+ *	从前往后遍历，不过是从该元素前面的元素中寻找重复的
  */
 
 template <typename T>
