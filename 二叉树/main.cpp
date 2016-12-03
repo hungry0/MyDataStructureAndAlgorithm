@@ -6,6 +6,8 @@
 #include "binnode_insert.h"
 #include "binnode_succ.h"
 #include "binnode_travlevel.h"
+#include "binnode_travpreorder.h"
+#include "binnode_travpostorder.h"
 
 using namespace std;
 
@@ -21,7 +23,11 @@ int main(int argc,char* argv[])
 
 //	bin_tree->travIn();
 
-	bin_tree->travLevel();
+//	bin_tree->travPre();
+
+//	bin_tree->travPost();
+
+//	bin_tree->travLevel();
 
 	system("pause");
 

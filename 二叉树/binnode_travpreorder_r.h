@@ -1,5 +1,5 @@
 #pragma once
-#include "../../¶ş²æÊ÷/¶ş²æÊ÷/binnode.h"
+#include "binnode.h"
 #include <cstdio>
 
 template<typename T>

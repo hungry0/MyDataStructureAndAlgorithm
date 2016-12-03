@@ -1,6 +1,6 @@
 #pragma once
-#include "../../¶ş²æÊ÷/¶ş²æÊ÷/bintree.h"
-#include "../../¶ş²æÊ÷/¶ş²æÊ÷/binnode_macro_basic.h"
+#include "bintree.h"
+#include "binnode_macro_basic.h"
 
 template<typename T>
 static int removeAt(BinNodePosi(T) x)
@@ -11,6 +11,8 @@ static int removeAt(BinNodePosi(T) x)
 
 	//	release(x->data);
 	//	release(x);
+
+	delete x;
 
 	return n;
 }
@@ -26,5 +28,4 @@ int BinTree<T>::remove(BinNodePosi(T) x)	//É¾³ı×ÓÊ÷
 	_size -= n;
 
 	return n;
-
 }

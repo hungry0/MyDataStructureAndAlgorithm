@@ -11,7 +11,7 @@
 template <typename T>
 void BinNode<T>::travIn()
 {
-	switch (3)
+	switch (rand() % 5)
 	{
 	case 1:
 		travIn_I1(this); break;

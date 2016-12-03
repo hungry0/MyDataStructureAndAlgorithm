@@ -8,7 +8,7 @@
 template <typename T>
 void BinNode<T>::travPre()
 {
-	switch (rand() % 2)
+	switch (0)
 	{
 	case 0:
 		travPre_I1(this);
@@ -16,7 +16,6 @@ void BinNode<T>::travPre()
 	case 1:
 		travPre_I2(this);
 		break;
-
 	default:
 		travPre_R(this);
 		break;

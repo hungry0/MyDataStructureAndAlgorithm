@@ -43,19 +43,12 @@ public:
 	BinNodePosi(T) attachAsRC(BinNodePosi(T) x, BinTree<T>* & S);
 
 	int remove(BinNodePosi(T) x);
-//
-//	BinTree<T>* secede(BinNodePosi(T) x); //将子树拆离开
-//
-	void travLevel() { if (_root) _root->travLevel(); }
-//
-//	template <typename VST>
-//	void travPre(VST& visit) { if (_root) _root->travPre(visit); }
-//
-	void travIn() { if (_root) _root->travIn(); }
-//
-//	template <typename VST>
-//	void TravPost(VST& visit) { if (_root) _root->travPost(visit); }
 
-	//	bool operator< (BinTree<T> const& t){reutrn _root && t->_root && lt}
-	//	bool operator==()
+//	BinTree<T>* secede(BinNodePosi(T) x); //将子树拆离开
+
+	void travLevel() { if (_root) _root->travLevel(); }
+
+	void travPre() { if (_root) _root->travPre(); }
+	void travIn() { if (_root) _root->travIn(); }
+	void travPost() { if (_root) _root->travPost(); }
 };

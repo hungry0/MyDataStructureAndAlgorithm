@@ -1,13 +1,13 @@
 #pragma once
 #include "binnode.h"
 #include <cstdlib>
-#include "travPost_I.h"
 #include "binnode_travpostorder_r.h"
+#include "binnode_travpostorder_i.h"
 
 template <typename T>
 void BinNode<T>::travPost()
 {
-	switch (rand() % 1)
+	switch (rand() % 2)
 	{
 	case 1:
 		travPost_I(this);
