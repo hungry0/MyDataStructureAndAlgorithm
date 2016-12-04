@@ -52,7 +52,7 @@ void Graph<Tv, Te>::DFS(int v, int& clock)
 			type(v, u) = BACKWARD;
 			break;
 				
-		default:					//已访问完毕，即Visited状态
+		default:					//已访问完毕，即visited状态
 			type(v, u) = (dTime(v) < dTime(u)) ? FORWARD : CROSS;
 			break;
 		}

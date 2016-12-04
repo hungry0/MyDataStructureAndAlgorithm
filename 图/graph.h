@@ -1,4 +1,5 @@
 #pragma once
+#include <stack>
 
 typedef enum {UNDISCOVERED,DISCOVERED,VISITED} VStatus;
 typedef enum {UNDETERMINED,TREE,CROSS,FORWARD,BACKWARD} EType;
@@ -27,7 +28,8 @@ public:
 
 	void BFS(int,int&);
 	void DFS(int, int&);
-//	void BCC(int, int&, std::stack<int>&);
+	void BCC(int, int&, std::stack<int>&);		//基于DFS的双连通分解算法
+	bool TSort(int, int&, std::stack<Tv>*);		//基于DFS的拓扑排序
 
 public:
 	int n;
@@ -55,8 +57,10 @@ public:
 
 	void dfs(int);
 	void bfs(int);
-//	void bcc(int);
+	void bcc(int);
 
-//	void prim(int);				//最小支撑树
-//	void dijkstra(int);			//最短路径算法
+	std::stack<Tv>* tSort(int);		//基于dfs的拓扑排序
+
+	void prim(int);					//最小支撑树
+	void dijkstra(int);				//最短路径算法
 };
