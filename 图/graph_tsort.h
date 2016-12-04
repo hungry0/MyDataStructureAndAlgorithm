@@ -43,7 +43,7 @@ bool Graph<Tv, Te>::TSort(int v, int& clock, std::stack<Tv>* S)
 		case UNDISCOVERED:
 			parent(u) = v;
 			type(v, u) = TREE;
-			if (!TSort(v, clock, S))
+			if (!TSort(u, clock, S))
 				return false;
 
 			break;
