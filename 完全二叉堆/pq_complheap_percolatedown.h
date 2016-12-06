@@ -1,7 +1,6 @@
 #pragma once
 #include "pq_complheap.h"
 #include "pq_complheap_macro.h"
-#include <utility>
 
 template <typename T>
 Rank PQ_ComplHeap<T>::percolateDown(Rank n, Rank i)

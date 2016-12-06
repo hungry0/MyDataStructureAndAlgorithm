@@ -20,7 +20,12 @@ public:
 		heapify(n);
 	}
 
-	void insert(T);
-	T getMax();
-	T delMax();
+	void insert(T) override;
+	T getMax() override;
+	T delMax() override;
 };
+
+#include "pq_complheap_heapify.h"
+#include "pq_complheap_delmax.h"
+#include "pq_complheap_insert.h"
+#include "pq_complheap_getmax.h"

@@ -1,5 +1,6 @@
 #pragma once
 #include "pq_complheap.h"
+#include "pq_complheap_percolatedown.h"
 
 template <typename T>
 T PQ_ComplHeap<T>::delMax()

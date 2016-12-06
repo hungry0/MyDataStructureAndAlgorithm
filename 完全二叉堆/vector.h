@@ -15,15 +15,6 @@ protected:
 	void copyFrom(T const* A, Rank io, Rank hi);
 	void expand();
 	void shrink();
-	bool bubble(Rank io, Rank hi);
-	void bubbleSort(Rank io,Rank hi);
-	Rank max(Rank io, Rank hi);
-	void selectionSort(Rank io, Rank hi);
-	void merge(Rank io, Rank mi, Rank hi);
-	void mergeSort(Rank io, Rank hi);
-	Rank partition(Rank io,Rank hi);
-	void quickSort(Rank io, Rank hi);
-	void heapSort(Rank io, Rank hi);
 
 public:
 	Vector(int c = DEFAULT_CAPACITY,int s = 0,T v = 0)
@@ -62,23 +53,12 @@ public:
 		return !_size;
 	}
 
-	int disordered() const;
-
 	Rank find(T const& e) const
 	{
 		return find(e, 0, _size);
 	}
 
 	Rank find(T const& e, Rank io, Rank hi) const;
-
-	Rank search(T const& e, Rank io, Rank hi);
-
-	Rank search(T const& e) 						//有序向量整体查找
-	{
-		return _size <= 0 ? -1 : search(e, 0, _size);
-	}
-
-	
 
 	T& operator[](Rank i) const;
 
@@ -94,27 +74,7 @@ public:
 	{
 		return insert(_size, e);
 	}
-
-	void sort(Rank lo, Rank hi);
-
-	void sort()
-	{
-		sort(0, _size);
-	}
-
-	void unsort(Rank lo, Rank hi);
-
-	void unsort()
-	{
-		unsort(0, _size);
-	}
-
-	int deduplicate();	//无序去重
-	int uniquify();		//有序去重
-
-	void printAll();
 };
 
-#include "vector_search.h"
 
 

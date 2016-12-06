@@ -4,6 +4,6 @@
 template <typename T>
 T PQ_ComplHeap<T>::getMax()
 {
-	return _elem[0];
+	return Vector<T>::_elem[0];
 }
 
