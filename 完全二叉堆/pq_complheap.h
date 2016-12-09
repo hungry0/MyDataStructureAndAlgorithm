@@ -20,9 +20,9 @@ public:
 		heapify(n);
 	}
 
-	void insert(T) override;
-	T getMax() override;
-	T delMax() override;
+	void insert(T) override;				//插入数值
+	T getMax() override;					//获得最大值
+	T delMax() override;					//删除最大值
 };
 
 #include "pq_complheap_heapify.h"
