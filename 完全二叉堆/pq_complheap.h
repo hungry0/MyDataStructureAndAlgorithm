@@ -3,6 +3,18 @@
 #include "vector_constructor_by_copying.h"
 #include "pq.h"
 
+/**************************************************************
+
+Author：hungry
+Date:2016.12.10
+Description:优先级队列实现
+
+Analysis:
+① 此处有Floyd算法构建优先级队列
+② 上虑和下虑的排序方法
+
+**************************************************************/
+
 template<typename T>
 class PQ_ComplHeap : public PQ<T> , public Vector<T>
 {

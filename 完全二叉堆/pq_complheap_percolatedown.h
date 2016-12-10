@@ -2,6 +2,17 @@
 #include "pq_complheap.h"
 #include "pq_complheap_macro.h"
 
+/**************************************************************
+
+Author£ºhungry
+Date:2016.12.10
+Description:ÏÂÂË²Ù×÷
+
+Analysis:
+¢Ù 
+
+**************************************************************/
+
 template <typename T>
 Rank PQ_ComplHeap<T>::percolateDown(Rank n, Rank i)
 {
