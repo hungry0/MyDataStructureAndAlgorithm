@@ -4,6 +4,17 @@
 #include "binnode_succ.h"
 #include <utility>
 
+/**************************************************************
+
+Author：hungry
+Date:2016.12.10
+Description:二叉搜索树的移除节点方法
+
+Analysis:
+① 
+
+**************************************************************/
+
 template<typename T>
 static BinNodePosi(T) removeAt(BinNodePosi(T)& x,BinNodePosi(T)& hot)
 {
@@ -33,9 +44,6 @@ static BinNodePosi(T) removeAt(BinNodePosi(T)& x,BinNodePosi(T)& hot)
 
 	if (succ)
 		succ->parent = hot;
-
-//	relase(w->data);
-//	relase(w);
 
 	delete w;
 	

@@ -20,7 +20,7 @@ public:
 	{
 	}
 
-	~BinTree()
+	virtual ~BinTree()
 	{
 		if (_size > 0)
 			remove(_root);
