@@ -4,7 +4,7 @@
 
 Author：hungry
 Date:2016.12.10
-Description:优先级队列
+Description:完全二叉树
 
 Analysis:
 ① 有插入方法，会将该值插入到既定的位置

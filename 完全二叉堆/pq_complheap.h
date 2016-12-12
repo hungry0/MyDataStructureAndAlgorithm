@@ -7,7 +7,7 @@
 
 Author：hungry
 Date:2016.12.10
-Description:优先级队列实现
+Description:完全二叉树的实现
 
 Analysis:
 ① 此处有Floyd算法构建优先级队列
