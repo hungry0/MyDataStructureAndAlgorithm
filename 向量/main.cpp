@@ -22,4 +22,5 @@ void main()
 	cout << i << endl;
 
 	system("pause");
+
 }
