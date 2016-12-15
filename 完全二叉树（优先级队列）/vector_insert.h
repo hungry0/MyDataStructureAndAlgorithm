@@ -2,6 +2,8 @@
 #include "vector.h"
 #include "vector_expand.h"
 
+//向量的插入
+
 template <typename T>
 Rank Vector<T>::insert(Rank r, T const& e)
 {
