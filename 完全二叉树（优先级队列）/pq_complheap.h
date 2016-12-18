@@ -37,7 +37,7 @@ public:
 	T delMax() override;					//删除最大值
 };
 
-#include "pq_complheap_heapify.h"
+#include "pq_complheap_heapify.h"			//此处可优化，都堆到一个头文件中
 #include "pq_complheap_delmax.h"
 #include "pq_complheap_insert.h"
 #include "pq_complheap_getmax.h"
