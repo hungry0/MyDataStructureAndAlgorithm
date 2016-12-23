@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <vector>
 
+//将列表随机打乱顺序
+
 template<typename T>
 static void permute(Vector<T> &V)
 {
