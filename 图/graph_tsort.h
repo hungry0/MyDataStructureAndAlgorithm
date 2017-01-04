@@ -1,6 +1,15 @@
 #pragma once
 #include "Graphmatrix.h"
 
+/**************************************************************
+
+Author：hungry
+Date:2017.1.5
+Description:拓扑排序
+
+
+**************************************************************/
+
 template <typename Tv, typename Te>
 std::stack<Tv>* Graph<Tv, Te>::tSort(int s)
 {
