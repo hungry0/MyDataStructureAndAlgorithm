@@ -2,6 +2,10 @@
 
 #include "listnode.h"
 
+/*
+	List的.h，包含一些排序算法
+*/
+
 template<typename T>
 class List
 {
