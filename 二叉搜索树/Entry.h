@@ -1,5 +1,9 @@
 #pragma once
 
+/*
+	暂时没用到
+*/
+
 template<typename K,typename V>
 struct Entry
 {
